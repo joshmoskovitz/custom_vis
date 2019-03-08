@@ -1,0 +1,18 @@
+looker.plugins.visualizations.add({
+  id: "application_foo",
+  label: "Custom Embed App",
+  options: {},
+  create: function(element, config){
+    // Either bootstrap your angular app here
+    // Or navigate to window.location.href = 'https://[my-app]'
+    // If navigating, you're likely to have trouble with the fact that we only allow `https`
+    // and we are in a sandboxed iframe, so there's no referrer. You'll need some fairly open
+    // server policies to allow access
+    window.location.href = 'https://www.codingvc.com/startups-are-risk-bundles/'
+
+  },
+  updateAsync: function(data, element, config, queryResponse, details, done){
+    // This method must exist but it's essentially a noop for an application
+    done()
+  }
+});
